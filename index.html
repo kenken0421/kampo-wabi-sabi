@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f0e7">
+    <meta name="description" content="赤坂・溜池山王の焼肉KAMPO。14種類の漢方素材を配合した飼料で育てた漢方和牛を、焼肉でお楽しみください。">
+    <title>焼肉KAMPO｜赤坂・溜池山王の漢方和牛</title>
+    <link rel="icon" type="image/jpeg" href="./images/kampo-logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&amp;family=Noto+Serif+JP:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <style>
+      :root { color-scheme:dark; --ink:#171512; --ink-soft:#25211c; --cream:#f1ebe2; --cream-deep:#e9dfd2; --gold:#c9a878; --muted:#c9c1b7; --rule:rgba(230,212,185,.28); }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; background:var(--ink); color:var(--cream); font:400 16px/1.85 "Noto Sans JP",system-ui,sans-serif; }
+      img { display:block; max-width:100%; }
+      a { color:inherit; }
+      a:focus-visible { outline:2px solid var(--gold); outline-offset:4px; }
+      .container { width:min(1160px,calc(100% - 48px)); margin-inline:auto; }
+      .site-header { border-bottom:1px solid var(--rule); background:var(--ink); }
+      .header-inner { min-height:92px; display:flex; align-items:center; justify-content:space-between; gap:28px; }
+      .brand { display:inline-flex; align-items:center; gap:14px; text-decoration:none; min-width:0; }
+      .brand img { width:60px; height:60px; object-fit:cover; border-radius:50%; flex:none; }
+      .brand-name { display:flex; flex-direction:column; line-height:1.2; white-space:nowrap; }
+      .brand-name strong { font:500 1.15rem/1.3 "Noto Serif JP",serif; letter-spacing:.12em; }
+      .brand-name small { color:var(--gold); font-size:.65rem; letter-spacing:.2em; margin-top:4px; }
+      .nav { display:flex; align-items:center; gap:30px; font-size:.86rem; white-space:nowrap; }
+      .nav a { text-decoration:none; }
+      .nav a:hover,.text-link:hover { color:var(--gold); }
+      .nav .nav-book { border:1px solid var(--gold); color:var(--gold); padding:9px 22px; }
+      .hero { display:grid; grid-template-columns:minmax(0,.93fr) minmax(0,1.07fr); min-height:660px; max-width:1600px; margin:auto; }
+      .hero-copy { padding:92px clamp(34px,6vw,104px); display:flex; flex-direction:column; justify-content:center; }
+      .eyebrow,.kicker { margin:0; color:var(--gold); font-size:.78rem; font-weight:600; letter-spacing:.22em; }
+      .hero h1 { margin:29px 0 28px; font:500 clamp(3rem,4vw,4.6rem)/1.38 "Noto Serif JP",serif; letter-spacing:.06em; }
+      .hero-lead { max-width:29em; margin:0 0 42px; color:#ddd4c8; line-height:2.08; }
+      .button { display:inline-flex; align-items:center; justify-content:center; align-self:flex-start; min-height:54px; padding:12px 30px; background:var(--gold); color:var(--ink); font-weight:700; text-decoration:none; letter-spacing:.06em; transition:background .2s,transform .2s; }
+      .button:hover { background:#e3c396; transform:translateY(-2px); }
+      .hero-photo { position:relative; min-height:560px; margin:0; overflow:hidden; background:#2b2723; }
+      .hero-photo img { width:100%; height:100%; object-fit:cover; object-position:center; }
+      .hero-photo figcaption { position:absolute; bottom:20px; right:24px; padding:5px 10px; font-size:.72rem; background:rgba(0,0,0,.5); }
+      .section { padding:clamp(76px,9vw,122px) 0; }
+      .section-header { margin-bottom:34px; }
+      .section h2 { margin:12px 0 0; font:500 clamp(2.2rem,3.3vw,3.55rem)/1.43 "Noto Serif JP",serif; letter-spacing:.06em; }
+      .section p { margin-top:0; }
+      .section-copy { max-width:42em; line-height:2.05; }
+      .about { background:var(--cream); color:var(--ink); }
+      .about .kicker,.craft .kicker,.access .kicker { color:#9b7247; }
+      .about-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.78fr); align-items:center; gap:clamp(40px,8vw,110px); }
+      .about .section-copy { margin:28px 0 0; }
+      .material-photo { margin:0; }
+      .material-photo img { width:100%; aspect-ratio:1.23; object-fit:cover; }
+      figcaption { margin-top:11px; font-size:.75rem; color:#776d61; }
+      .about-annotation { display:flex; align-items:baseline; gap:12px; margin-top:38px; border-top:1px solid #cbbca9; padding-top:22px; }
+      .about-annotation strong { font:500 3.2rem/1 Georgia,serif; color:#9b7247; }
+      .about-annotation span { font-size:.85rem; }
+      .pasture { position:relative; width:100%; max-width:1160px; margin:0 auto; }
+      .pasture img { display:block; width:100%; height:auto; }
+      .pasture figcaption { position:absolute; right:max(24px,calc((100% - 1160px)/2)); bottom:18px; color:#fff; background:rgba(0,0,0,.55); padding:5px 10px; }
+      .craft { background:var(--ink-soft); }
+      .craft .section-header { max-width:740px; }
+      .craft .section-copy { color:#d7cec2; margin:25px 0 0; }
+      .photo-pair { display:grid; grid-template-columns:1.18fr .82fr; gap:22px; margin-top:48px; }
+      .photo-pair figure { margin:0; }
+      .photo-pair img { width:100%; height:420px; object-fit:cover; }
+      .photo-pair figure:last-child img { object-position:center 45%; }
+      .photo-pair figcaption { color:#bcb2a5; }
+      .film { background:#1d1a16; }
+      .film-grid { display:grid; grid-template-columns:.75fr 1.25fr; gap:clamp(30px,7vw,90px); align-items:center; }
+      .film .section-copy { color:#d7cec2; margin:24px 0 0; }
+      .video-frame { width:100%; aspect-ratio:16/9; border:1px solid var(--rule); background:#000; }
+      .video-frame iframe { display:block; width:100%; height:100%; border:0; }
+      .film-credit { color:#bcb2a5; font-size:.78rem; margin:10px 0 0; }
+      .company { background:var(--cream-deep); color:var(--ink); }
+      .company .kicker { color:#9b7247; }
+      .company-grid { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); gap:clamp(36px,7vw,90px); align-items:start; }
+      .company h2 { font-size:clamp(1.85rem,2.8vw,2.8rem); }
+      .company-story p { margin:24px 0 0; line-height:2.05; }
+      .company-profile { border-top:3px solid #9b7247; padding-top:24px; }
+      .company-profile h3 { margin:0 0 24px; font:500 clamp(1.55rem,2vw,2rem)/1.5 "Noto Serif JP",serif; }
+      .company-profile dl { margin:0; }
+      .company-profile dl > div { padding:16px 0; border-top:1px solid #cbbca9; }
+      .company-profile dt { margin-bottom:6px; color:#805b37; font-size:.9rem; font-weight:700; }
+      .company-profile dd { margin:0; overflow-wrap:anywhere; }
+      .company-profile a { text-underline-offset:4px; }
+      .development { margin-top:56px; padding-top:34px; border-top:1px solid #cbbca9; }
+      .development h3 { margin:10px 0 28px; font:500 clamp(1.55rem,2.5vw,2.1rem)/1.5 "Noto Serif JP",serif; }
+      .development .development-intro { max-width:48em; margin:-10px 0 30px; color:#554a3e; font-size:1rem; line-height:2; }
+      .development-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:24px; }
+      .development-item { min-width:0; border:1px solid #cbbca9; background:#fbf7f0; overflow:hidden; }
+      .development-item > img { width:100%; height:auto; }
+      .product-copy { padding:24px 28px 28px; }
+      .product-heading { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; }
+      .product-heading .product-origin { margin:0 0 4px; color:#755132; font-size:.9rem; font-weight:600; }
+      .development-item h4 { margin:0; font:500 2rem/1.4 "Noto Serif JP",serif; }
+      .development-item .product-description { margin:18px 0 0; color:#554a3e; font-size:1rem; line-height:1.9; }
+      .development-status { display:inline-block; flex:none; padding:5px 11px; background:#f0e3d9; color:#823e2e; font-size:.9rem; font-weight:600; }
+      .access { background:var(--cream); color:var(--ink); }
+      .access-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(30px,8vw,100px); }
+      .store-contact { margin-top:30px; }
+      .store-contact-label { display:block; margin-bottom:8px; color:#755132; font-size:.9rem; }
+      .store-phone { display:inline-block; font-size:clamp(1.5rem,2.2vw,2rem); line-height:1.5; text-decoration:underline; text-underline-offset:6px; overflow-wrap:anywhere; }
+      .store-hours { margin:30px 0 0; border-top:1px solid #cbbca9; }
+      .store-hours > div { display:grid; grid-template-columns:90px minmax(0,1fr); gap:16px; padding:16px 0; border-bottom:1px solid #cbbca9; }
+      .store-hours dt { color:#755132; font-weight:600; }
+      .store-hours dd { margin:0; }
+      .store-hours small { display:block; font-size:.9rem; color:#65594d; }
+      .store-hours .dinner-time { margin-top:10px; }
+      .access .store-note { margin:18px 0 0; font-size:.9rem; color:#65594d; }
+      .access-label { margin:0 0 10px; color:#9b7247; font-size:.76rem; font-weight:700; letter-spacing:.2em; }
+      .address { margin:0; font-size:1.08rem; line-height:2.05; }
+      .station { margin:15px 0 0; color:#5f554b; font-size:.93rem; }
+      .text-link { display:inline-block; margin-top:22px; color:#7d5632; text-underline-offset:5px; }
+      .reservation { text-align:center; padding:100px 24px 110px; background:var(--ink); }
+      .reservation h2 { margin:15px 0 16px; font:500 clamp(2.1rem,3.2vw,3.5rem)/1.4 "Noto Serif JP",serif; }
+      .reservation p { margin:0 auto 32px; color:var(--muted); max-width:32em; }
+      .reservation .button { align-self:auto; }
+      footer { border-top:1px solid var(--rule); padding:30px 0; font-size:.79rem; color:var(--muted); }
+      .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; }
+      footer a { text-underline-offset:4px; }
+      @media (max-width:900px) {
+        .hero { grid-template-columns:1fr 1fr; min-height:580px; }
+        .hero-copy { padding:66px 35px; }
+        .hero h1 { font-size:clamp(2.8rem,5vw,4rem); }
+        .nav { gap:16px; }
+        .nav .nav-story { display:none; }
+        .about-grid { gap:40px; }
+      }
+      @media (max-width:700px) {
+        .header-inner { min-height:76px; }
+        .brand img { width:50px; height:50px; }
+        .nav .nav-about,.nav .nav-access { display:none; }
+        .hero { display:flex; flex-direction:column; }
+        .hero-copy { padding:72px 25px 66px; }
+        .hero h1 { font-size:clamp(2.8rem,9vw,4rem); }
+        .hero-photo { min-height:400px; height:54vw; max-height:540px; }
+        .about-grid,.access-grid,.film-grid,.company-grid { grid-template-columns:1fr; }
+        .material-photo { max-width:620px; }
+        .development-grid { grid-template-columns:1fr; }
+        .photo-pair { gap:14px; }
+        .photo-pair img { height:320px; }
+      }
+      @media (max-width:480px) {
+        .container { width:calc(100% - 36px); }
+        .header-inner { min-height:68px; }
+        .brand { gap:9px; }
+        .brand img { width:43px; height:43px; }
+        .brand-name strong { font-size:.98rem; }
+        .brand-name small { font-size:.54rem; }
+        .nav .nav-book { padding:7px 13px; font-size:.78rem; }
+        .hero-copy { padding:64px 22px 55px; }
+        .hero h1 { margin:24px 0; font-size:2.7rem; }
+        .hero-lead { margin-bottom:32px; }
+        .hero-photo { min-height:290px; height:76vw; }
+
+        .photo-pair { grid-template-columns:1fr; }
+        .product-copy { padding:20px 22px 24px; }
+        .photo-pair img { height:auto; aspect-ratio:1.4; }
+        .photo-pair figure:last-child img { aspect-ratio:1.2; }
+      }
+      @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .button { transition:none; } }
+    
+      /* Quiet paper, natural proportions and generous space. */
+      :root { color-scheme:light; --ink:#302f29; --ink-soft:#343731; --cream:#f4f0e7; --cream-deep:#eae5da; --gold:#807052; --muted:#c9c9bd; --rule:rgba(90,83,65,.22); }
+      body { background:var(--cream); color:var(--ink); font-size:15px; background-image:url("./images/paper-grain.svg"); }
+      .container { width:min(1080px,calc(100% - 80px)); }
+      .site-header { background:transparent; border-bottom:0; }
+      .header-inner { min-height:112px; }
+      .brand img { width:48px; height:48px; mix-blend-mode:multiply; }
+      .brand-name strong { font-size:1.05rem; letter-spacing:.16em; }
+      .brand-name small { font-size:.58rem; font-weight:400; }
+      .nav { gap:28px; font-size:.78rem; }
+      .nav .nav-book { padding:8px 20px; border-color:#9c947f; }
+      .hero { min-height:690px; width:min(1280px,calc(100% - 80px)); grid-template-columns:.9fr 1.1fr; gap:48px; padding:40px 0 96px; align-items:center; }
+      .hero-copy { padding:20px 0 20px clamp(0px,4vw,56px); }
+      .hero h1 { font-weight:400; font-size:clamp(3rem,4.5vw,4.7rem); line-height:1.62; letter-spacing:.12em; margin:30px 0; }
+      .eyebrow,.kicker { font-size:.65rem; font-weight:400; letter-spacing:.24em; }
+      .hero-lead { color:#68675d; font-size:.88rem; line-height:2.3; max-width:27em; margin-bottom:32px; }
+      .button { background:transparent; color:inherit; border-bottom:1px solid currentColor; min-height:44px; padding:8px 0; font-size:.85rem; font-weight:400; letter-spacing:.12em; gap:32px; }
+      .button::after { content:'→'; font-size:1.1rem; }
+      .button:hover { background:transparent; color:var(--gold); transform:none; }
+      .hero-photo { min-height:0; height:550px; width:100%; margin-top:32px; background:#33342d; }
+      .hero-photo img { object-position:54% center; }
+      .hero-photo figcaption { color:#f4f0e7; bottom:16px; right:16px; background:rgba(32,33,27,.55); font-size:.65rem; letter-spacing:.1em; }
+      .section { padding:112px 0; }
+      .section h2 { font-weight:400; line-height:1.65; font-size:clamp(2rem,3.2vw,3.2rem); letter-spacing:.1em; }
+      .section-copy { font-size:.94rem; line-height:2.35; }
+      .about,.company,.access { background:transparent; }
+      .about { border-top:1px solid var(--rule); }
+      .about-grid { grid-template-columns:1fr .75fr; gap:100px; }
+      .material-photo { padding-top:70px; }
+      .material-photo img { aspect-ratio:auto; }
+      figcaption { font-size:.67rem; letter-spacing:.08em; }
+      .about-annotation { margin-top:34px; border-color:var(--rule); padding-top:24px; }
+      .about-annotation strong { font-weight:400; color:var(--gold); font-size:2.8rem; }
+      .pasture { width:min(920px,calc(100% - 80px)); margin:0 auto 100px; }
+      .pasture figcaption { background:rgba(32,33,27,.55); right:16px; font-size:.65rem; }
+      .craft { background:var(--ink-soft); color:var(--cream); }
+      .craft .kicker,.film .kicker { color:#bbb397; }
+      .craft .section-copy,.film .section-copy { color:#d0d0c4; }
+      .photo-pair { grid-template-columns:1.22fr .78fr; gap:60px; align-items:start; margin-top:64px; }
+      .photo-pair img { height:auto; aspect-ratio:1.4; }
+      .photo-pair figure:last-child { margin-top:120px; }
+      .photo-pair figure:last-child img { aspect-ratio:.82; }
+      .film { background:#eae5da; color:var(--ink); }
+      .film .kicker { color:var(--gold); }
+      .film .section-copy,.film-credit { color:#68675d; }
+      .film-grid { grid-template-columns:.8fr 1.2fr; gap:70px; }
+      .company { padding-top:130px; }
+      .company h2 { font-size:clamp(1.8rem,2.5vw,2.5rem); }
+      .company-story p { color:#68675d; font-size:.9rem; line-height:2.3; }
+      .company-profile { border-top:1px solid #94866b; }
+      .company-profile h3 { font-weight:400; font-size:1.65rem; }
+      .company-profile dt { font-weight:400; font-size:.78rem; }
+      .company-profile dd { font-size:.86rem; }
+      .development { margin-top:100px; padding-top:66px; border-color:var(--rule); }
+      .development h3 { font-weight:400; letter-spacing:.06em; }
+      .development .development-intro { color:#68675d; font-size:.9rem; line-height:2.25; margin-bottom:44px; }
+      .development-grid { gap:48px; }
+      .development-item { border:0; background:transparent; }
+      .product-copy { padding:26px 0 0; }
+      .development-item h4 { font-weight:400; font-size:1.8rem; }
+      .product-heading .product-origin { font-size:.76rem; font-weight:400; color:var(--gold); }
+      .development-status { border:1px solid #a49b84; color:#615d4d; background:transparent; font-size:.72rem; font-weight:400; }
+      .development-item .product-description { font-size:.88rem; color:#68675d; }
+      .access { border-top:1px solid var(--rule); }
+      .store-contact-label { font-size:.8rem; color:#68675d; }
+      .store-phone { font-family:'Noto Serif JP',serif; font-size:1.8rem; }
+      .store-hours { font-size:.9rem; }
+      .store-hours dt { font-weight:400; }
+      .store-hours small,.access .store-note { font-size:.8rem; }
+      .reservation { padding:100px 24px; background:#343731; color:var(--cream); }
+      .reservation h2 { font-weight:400; letter-spacing:.08em; }
+      .reservation .kicker { color:#bbb397; }
+      footer { background:#343731; border-color:rgba(220,220,200,.2); color:#c9c9bd; font-size:.7rem; }
+      @media(max-width:900px) {
+        .hero { gap:32px; min-height:600px; }
+        .hero-copy { padding:0; }
+        .hero h1 { font-size:3rem; }
+        .hero-photo { height:470px; }
+        .about-grid { gap:48px; }
+        .photo-pair { gap:32px; }
+      }
+      @media(max-width:700px) {
+        .container { width:calc(100% - 44px); }
+        .header-inner { min-height:88px; }
+        .brand img { width:40px; height:40px; }
+        .hero { width:calc(100% - 44px); padding:24px 0 64px; gap:0; min-height:0; }
+        .hero-copy { padding:24px 4px 36px; }
+        .hero h1 { font-size:clamp(2.7rem,9vw,3.7rem); line-height:1.55; }
+        .hero-lead { max-width:30em; }
+        .hero-photo { margin:0; height:420px; min-height:0; max-height:none; }
+        .section { padding:72px 0; }
+        .about-grid,.company-grid,.access-grid,.film-grid { grid-template-columns:1fr; gap:40px; }
+        .material-photo { padding:0; max-width:440px; margin-left:auto; width:85%; }
+        .pasture { width:calc(100% - 44px); margin-bottom:64px; }
+        .photo-pair { gap:22px; }
+        .photo-pair figure:last-child { margin-top:64px; }
+        .development { margin-top:64px; padding-top:44px; }
+        .development-grid { grid-template-columns:1fr; gap:48px; }
+        .reservation { padding:72px 22px; }
+      }
+      @media(max-width:480px) {
+        .brand-name strong { font-size:.9rem; }
+        .nav .nav-book { padding:7px 12px; font-size:.74rem; }
+        .hero-photo { height:340px; }
+        .photo-pair { grid-template-columns:1fr; }
+        .photo-pair figure:last-child { width:78%; margin:24px 0 0 auto; }
+        .photo-pair figure:last-child img { aspect-ratio:.85; }
+        .product-copy { padding:22px 0 0; }
+        .section h2 { font-size:2rem; }
+        .store-hours > div { grid-template-columns:66px minmax(0,1fr); gap:12px; }
+      }
+    </style>
+  <style id="new-photos-20261013">
+      .hero-photo img { object-position:center; }
+      .new-dishes { margin-top:64px; padding-top:40px; border-top:1px solid var(--rule); }
+      .new-dishes h3,.new-staff h3 { font:400 clamp(1.5rem,2.4vw,2.2rem)/1.6 "Noto Serif JP",serif; margin:0 0 18px; letter-spacing:.06em; }
+      .new-gallery-lead { max-width:44em; font-size:.9rem; line-height:2.1; margin:20px 0 32px; }
+      .craft .new-gallery-lead,.craft .new-photo-grid figcaption { color:var(--muted); }
+      .new-photo-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px 28px; align-items:start; }
+      .new-photo-grid figure { margin:0; min-width:0; }
+      .new-photo-grid img { width:100%; height:auto; }
+      .new-photo-grid figcaption { margin-top:12px; line-height:1.7; }
+      .new-photo-more { margin-top:30px; }
+      .new-photo-more summary { cursor:pointer; width:fit-content; padding:12px 0; border-bottom:1px solid currentColor; font-size:.85rem; letter-spacing:.05em; }
+      .new-photo-more summary:focus-visible { outline:2px solid var(--gold); outline-offset:5px; }
+      .new-photo-more > .new-photo-grid { margin-top:30px; }
+      .new-atmosphere { background:var(--cream-deep); color:var(--ink); }
+      .new-atmosphere .kicker { color:#806441; }
+      .new-atmosphere .new-gallery-lead { color:#65594d; }
+      .new-staff { max-width:760px; margin-top:46px; padding-top:32px; border-top:1px solid rgba(100,80,60,.25); }
+      .new-staff figure { margin:0; }
+      .new-staff img { width:100%; height:auto; }
+      @media(max-width:480px) { .new-photo-grid { grid-template-columns:1fr; gap:28px; } .new-dishes { margin-top:42px; padding-top:28px; } }
+    
+          .new-photo-grid { gap:48px 40px; }
+          .new-dishes { margin-top:90px; padding-top:54px; }
+          .new-atmosphere { background:#eae5da; }
+          .new-atmosphere .kicker { color:var(--gold); }
+          .new-atmosphere .new-gallery-lead { color:#68675d; }
+          @media(max-width:700px) { .new-photo-grid { gap:32px 22px; } .new-dishes { margin-top:56px; padding-top:36px; } }
+        </style></head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="焼肉KAMPO トップ"><img src="./images/kampo-logo.jpg" alt="" width="60" height="60"><span class="brand-name"><strong>焼肉KAMPO</strong><small>YAKINIKU KAMPO</small></span></a>
+        <nav class="nav" aria-label="メインナビゲーション">
+          <a class="nav-about" href="#about">漢方和牛</a>
+          <a class="nav-story" href="#craft">味わい</a>
+          <a class="nav-story" href="#company">会社概要</a>
+          <a href="#atmosphere" class="nav-story">店内</a><a class="nav-access" href="#access">アクセス</a>
+          <a class="nav-book" href="https://tabelog.com/tokyo/A1308/A130801/13276480/" target="_blank" rel="noopener noreferrer">ご予約</a>
+        </nav>
+      </div>
+    </header>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">AKASAKA · TAMEIKE-SANNO</p>
+          <h1 id="hero-title">漢方和牛を、<br>焼肉で。</h1>
+          <p class="hero-lead">14種類の漢方素材を配合した飼料で育てた「漢方和牛」。赤身の旨みと脂の甘みを、焼肉KAMPOでお楽しみください。</p>
+          <a class="button" href="https://tabelog.com/tokyo/A1308/A130801/13276480/" target="_blank" rel="noopener noreferrer">席を予約する</a>
+        </div>
+        <figure class="hero-photo"><img src="./images/new_22-09-031142-f.webp" alt="和牛の盛り合わせ" width="1800" height="1200" decoding="async" fetchpriority="high"><figcaption>和牛の盛り合わせ</figcaption></figure></section>
+      <section class="section about" id="about" aria-labelledby="about-title">
+        <div class="container about-grid">
+          <div>
+            <div class="section-header"><p class="kicker">01 / KAMPO WAGYU</p><h2 id="about-title">食材の背景から、<br>味わう。</h2></div>
+            <p class="section-copy">漢方和牛は、14種類の漢方素材を配合した飼料で育てられた和牛。焼肉KAMPOでは、赤身の旨みと脂の甘み、そのバランスを焼肉でお届けします。</p>
+            <div class="about-annotation"><strong>14</strong><span>種類の漢方素材を飼料に配合</span></div>
+          </div>
+          <figure class="material-photo"><img src="./images/herbal-feed.jpg" alt="白い皿に並んだ14種類の漢方素材" width="496" height="404" loading="lazy" decoding="async"><figcaption>飼料に用いられる漢方素材</figcaption></figure>
+        </div>
+      </section>
+      <figure class="pasture"><img src="./images/pasture.jpg" alt="草地で草を食べる牛" width="1707" height="1280" loading="lazy" decoding="async"><figcaption>牧場の風景</figcaption></figure>
+      <section class="section craft" id="craft" aria-labelledby="craft-title">
+        <div class="container">
+          <div class="section-header"><p class="kicker">02 / THE TASTE</p><h2 id="craft-title">一皿ずつ、<br>和牛の味わいを。</h2><p class="section-copy">漢方和牛の赤身の旨み、脂の甘み。素材の表情を見ながら、焼肉の時間をゆっくりお楽しみください。</p></div>
+          <div class="photo-pair">
+            <figure><img src="./images/new_z6b_0104.webp" alt="手作業で和牛を切り分ける様子" width="1800" height="1200" loading="lazy" decoding="async"><figcaption>一枚ずつ、丁寧に</figcaption></figure><figure><img src="./images/new_z6b_0121.webp" alt="厨房で肉を切り分けるスタッフ" width="1200" height="1800" loading="lazy" decoding="async"><figcaption>手仕事の風景</figcaption></figure></div>
+        <div class="new-dishes" id="restaurant-dishes"><h3>料理の風景</h3><p class="new-gallery-lead">和牛の盛り合わせから、焼き網を囲む時間、食後のひとときまで。</p><div class="new-photo-grid"><figure><img src="./images/new_22-09-031142-f.webp" alt="和牛の盛り合わせ" width="1800" height="1200" loading="lazy" decoding="async"><figcaption>和牛の盛り合わせ</figcaption></figure><figure><img src="./images/new_z8a_0031.webp" alt="焼き網の上の薄切り和牛" width="1800" height="1200" loading="lazy" decoding="async"><figcaption>焼き網を囲む時間</figcaption></figure><figure><img src="./images/new_22-09-032386-f.webp" alt="肉の握りと付け合わせ" width="1800" height="1200" loading="lazy" decoding="async"><figcaption>一口の味わい</figcaption></figure><figure><img src="./images/new_22-09-033435-f.webp" alt="薄切り肉と卵、薬味" width="1800" height="1200" loading="lazy" decoding="async"><figcaption>素材と薬味</figcaption></figure></div><details class="new-photo-more"><summary>料理・デザートの写真をもっと見る</summary><div class="new-photo-grid"><figure><img src="./images/new_22-09-031126-f.webp" alt="器に盛り付けた肉料理" width="1800" height="1162" loading="lazy" decoding="async"><figcaption>食卓を彩る盛り付け</figcaption></figure><figure><img src="./images/new_22-09-031114-f.webp" alt="肉の盛り合わせとレモン" width="1800" height="1200" loading="lazy" decoding="async"><figcaption>一皿の表情</figcaption></figure><figure><img src="./images/new_22-09-032338-f.webp" alt="野菜を盛り付けたサラダ" width="1200" height="1800" loading="lazy" decoding="async"><figcaption>彩りの一皿</figcaption></figure><figure><img src="./images/new_22-09-032211-f.webp" alt="ご飯の上の料理にソースをかける様子" width="1200" height="1800" loading="lazy" decoding="async"><figcaption>仕上げのひと手間</figcaption></figure><figure><img src="./images/new_22-09-032374-f.webp" alt="具材を盛り付けたスープ" width="1200" height="1800" loading="lazy" decoding="async"><figcaption>温かな一椀</figcaption></figure><figure><img src="./images/new_z8a_0041.webp" alt="焼き網の上で肉を持ち上げる様子" width="1800" height="1200" loading="lazy" decoding="async"><figcaption>焼き上がりの香り</figcaption></figure><figure><img src="./images/new_z8a_0048.webp" alt="肉と卵黄のある一皿" width="1200" height="1800" loading="lazy" decoding="async"><figcaption>卵黄とともに</figcaption></figure><figure><img src="./images/new_z8a_0004.webp" alt="グラスに盛り付けたデザート" width="1800" height="1200" loading="lazy" decoding="async"><figcaption>食後のひととき</figcaption></figure><figure><img src="./images/new_z8a_0029.webp" alt="白い皿に盛り付けたデザート" width="1800" height="1200" loading="lazy" decoding="async"><figcaption>甘い余韻</figcaption></figure></div></details></div></div>
+      </section>
+      <section class="section new-atmosphere" id="atmosphere" aria-labelledby="atmosphere-title"><div class="container"><div class="section-header"><p class="kicker">店内のご案内</p><h2 id="atmosphere-title">一卓を囲む、穏やかな時間。</h2><p class="new-gallery-lead">書や絵画が彩る店内。焼肉KAMPOの空間と、お迎えするスタッフをご紹介します。</p></div><div class="new-photo-grid"><figure><img src="./images/new_z6b_0093.webp" alt="焼肉KAMPOのテーブル席と通路" width="1800" height="1200" loading="lazy" decoding="async"><figcaption>店内の風景</figcaption></figure><figure><img src="./images/new_z6b_0032.webp" alt="書画のあるテーブル席" width="1800" height="1200" loading="lazy" decoding="async"><figcaption>書画を眺めながら</figcaption></figure></div><details class="new-photo-more"><summary>店内・スタッフの写真をもっと見る</summary><div class="new-photo-grid"><figure><img src="./images/new_z6b_0018.webp" alt="落ち着いた照明のテーブル席" width="1800" height="1200" loading="lazy" decoding="async"><figcaption>穏やかな灯り</figcaption></figure><figure><img src="./images/new_z6b_0156.webp" alt="焼肉KAMPOの店構え" width="1200" height="1800" loading="lazy" decoding="async"><figcaption>赤坂の店構え</figcaption></figure></div><div class="new-staff"><h3>お迎えする人、支える手。</h3><figure><img src="./images/new_z6b_0004.webp" alt="焼肉KAMPOのスタッフの集合写真" width="1800" height="1200" loading="lazy" decoding="async"><figcaption>皆さまをお迎えするスタッフ</figcaption></figure></div></details></div></section><section class="section film" aria-labelledby="film-title">
+        <div class="container film-grid">
+          <div class="section-header"><p class="kicker">VIDEO</p><h2 id="film-title">動画で見る<br>焼肉KAMPO</h2><p class="section-copy">漢方和牛の焼肉と、お店の様子を動画でご覧いただけます。</p></div>
+          <div><div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/dmnCEgQgFHs" title="焼肉KAMPOを紹介する動画" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><p class="film-credit">動画提供：音 Japanese Restaurant · <a href="https://www.youtube.com/watch?v=dmnCEgQgFHs" target="_blank" rel="noopener noreferrer">YouTubeで見る</a></p></div>
+        </div>
+      </section>
+      <section class="section company" id="company" aria-labelledby="company-title">
+        <div class="container">
+          <div class="company-grid">
+            <div class="company-story">
+              <div class="section-header"><p class="kicker">03 / OUR COMPANY</p><h2 id="company-title">医食の同源の理念と<br>和牛文化を融合し、<br>世界へ発信する。</h2></div>
+              <p>漢方和牛株式会社は、高品質な和牛を核に、日本の伝統と現代的価値を融合し、新たな和牛の可能性を創出する企業です。</p>
+              <p>和牛を単なる高級食材ではなく、風土・技術・美意識が息づく文化的価値として捉え、その魅力を国内外へ発信しています。</p>
+              <p>独自の和牛バリューチェーンを構築し、国際的ブランド「漢方和牛」の確立を目指すとともに、「医食の同源」の理念のもと、健康的な食文化と和牛文化を世界へ広げていきます。</p>
+              <p>品質への誠実さと革新への挑戦を重ね、和牛の新たな価値を未来へ届けてまいります。</p>
+            </div>
+            <div class="company-profile">
+              <p class="kicker">会社概要</p><h3>漢方和牛株式会社</h3>
+              <dl>
+                <div><dt>設立</dt><dd><time datetime="2022-06-14">2022年6月14日</time></dd></div>
+                <div><dt>出資</dt><dd>吉林大学日本商工聯合会企業と<br>関村牧場の共同出資</dd></div>
+                <div><dt>所在地</dt><dd>〒101-0045<br>東京都千代田区神田鍛冶町3-6-7<br>ウンピン神田ビル6F</dd></div>
+                <div><dt>会社へのお問い合わせ</dt><dd><a href="tel:0362608198">03-6260-8198</a></dd></div>
+                <div><dt>FAX</dt><dd>03-3525-4728</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="development" aria-labelledby="development-title">
+            <p class="kicker">KAMPO DIM SUM</p>
+            <h3 id="development-title">中華の逸品を、ご家庭で。</h3>
+            <p class="development-intro">小籠包と焼売は、漢方和牛と中華街の「王府井」が共同で手がける商品です。伝統の手仕事と上質な原材料を組み合わせ、一つひとつ丁寧に仕上げています。</p>
+            <div class="development-grid">
+              <article class="development-item" aria-labelledby="shumai-title">
+                <img src="./images/wagyu-shumai.png" alt="湯気の立つせいろに盛り付けた漢方和牛の焼売" width="1448" height="1086" loading="lazy" decoding="async">
+                <div class="product-copy">
+                  <div class="product-heading"><div><p class="product-origin">漢方和牛</p><h4 id="shumai-title">焼売</h4></div><span class="development-status">販売中</span></div>
+                  <p class="product-description">漢方和牛の旨みを楽しむ焼売。素材の味わいを、一口に。</p>
+                </div>
+              </article>
+              <article class="development-item" aria-labelledby="xiaolongbao-title">
+                <img src="./images/dimsum-selection.png" alt="手前のせいろに小籠包、奥のせいろに焼売を盛り付けた商品写真" width="1448" height="1086" loading="lazy" decoding="async">
+                <div class="product-copy">
+                  <div class="product-heading"><div><p class="product-origin">漢方豚</p><h4 id="xiaolongbao-title">小籠包</h4></div><span class="development-status">販売中</span></div>
+                  <p class="product-description">漢方豚とスープの味わいを楽しむ小籠包。豊かな旨みをご家庭へ。</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section access" id="access" aria-labelledby="access-title">
+        <div class="container access-grid">
+          <div class="section-header">
+            <p class="kicker">04 / ACCESS</p><h2 id="access-title">店舗案内</h2>
+            <div class="store-contact"><span class="store-contact-label">焼肉KAMPO 店舗へのお問い合わせ</span><a class="store-phone" href="tel:0357978637" aria-label="焼肉KAMPOの店舗へ電話する 03-5797-8637">03-5797-8637</a></div>
+          </div>
+          <div>
+            <p class="access-label">焼肉KAMPO</p>
+            <p class="address">〒107-0052<br>東京都港区赤坂2-8-13<br>赤坂こうゆうビル 1F</p>
+            <p class="station">東京メトロ 溜池山王駅 11番出口より徒歩約1分</p>
+            <dl class="store-hours" aria-label="営業時間と定休日">
+              <div><dt>月〜金</dt><dd>ランチ 11:30〜14:00<small>ラストオーダー 13:30</small><div class="dinner-time">ディナー 17:00〜22:00<small>ラストオーダー 21:30</small></div></dd></div>
+              <div><dt>定休日</dt><dd>土曜日・日曜日・祝日<small>ほか不定休あり</small></dd></div>
+            </dl>
+            <p class="store-note">ご予約はディナーのみ承っております。営業日・営業時間については店舗へお問い合わせください。</p>
+            <a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E7%84%BC%E8%82%89KAMPO%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%B8%AF%E5%8C%BA%E8%B5%A4%E5%9D%822-8-13" target="_blank" rel="noopener noreferrer">地図で見る</a>
+          </div>
+        </div>
+      </section>
+      <section class="reservation" aria-labelledby="reservation-title">
+        <p class="kicker">RESERVATION</p>
+        <h2 id="reservation-title">ご予約はこちらから</h2>
+        <p>空席確認・ご予約は食べログの店舗ページをご利用ください。</p>
+        <a class="button" href="https://tabelog.com/tokyo/A1308/A130801/13276480/" target="_blank" rel="noopener noreferrer">予約ページを開く</a>
+      </section>
+    </main>
+    <footer><div class="container footer-inner"><span>© 焼肉KAMPO · 漢方和牛株式会社</span><a href="#company">会社概要</a><a href="https://www.instagram.com/kampo.wagyu/" target="_blank" rel="noopener noreferrer">Instagram</a></div></footer>
+  </body>
+</html>
